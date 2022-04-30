@@ -4,14 +4,27 @@
     "description": "Final proyect NodeJS",
     "main": "index.js",
     "scripts": {
+        "start": "nodemon index",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Killises/taller-node.git"
+    },
     "keywords": [
-        "NodeJs"
+        "Node",
+        "express",
+        "JWT",
+        "mysql"
     ],
     "author": "Ulises Cabañas",
     "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Killises/taller-node/issues"
+    },
+    "homepage": "https://github.com/Killises/taller-node#readme",
     "dependencies": {
-        "express": "^4.18.1"
+        "express": "^4.18.1",
+        "nodemon": "^2.0.16"
     }
 }
