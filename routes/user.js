@@ -1,7 +1,7 @@
 const express = require('express');
 const user = express.Router();
 const db = require('../config/database');
-// const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 user.post("/login", async(req, res, next) => {
     const { user_mail, user_password } = req.body;
@@ -14,7 +14,7 @@ user.post("/login", async(req, res, next) => {
             const token = jwt.sign({
                 user_id: rows[0].user_id,
                 user_mail: rows[0].user_mail,
-            }, "debugkey");
+            }, "secret");
             return res.status(200).json({ code: 200, message: token });
         } else {
             return res.status(200).json({ code: 401, message: "Usuario y/o contraseña incorrectos" });
