@@ -14,7 +14,7 @@ user.post("/login", async(req, res, next) => {
             const token = jwt.sign({
                 user_id: rows[0].user_id,
                 user_mail: rows[0].user_mail,
-            }, "secret");
+            }, process.env.ENV_TOKEN);
             return res.status(200).json({ code: 200, message: token });
         } else {
             return res.status(200).json({ code: 401, message: "Usuario y/o contraseña incorrectos" });
